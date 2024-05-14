@@ -4,8 +4,6 @@ abstract class Migration{
     public function __construct(){
         $config = include'../config.php';
         $dsn = "mysql:host=".$config['host'].";dbname=".$config['db'].";charset=".$config['charset'];
-
-        echo $dsn;
         $opt = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

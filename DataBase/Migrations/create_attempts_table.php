@@ -9,7 +9,7 @@ class AttemptsMigration extends Migration
     public function run()
     {
         $request = $this->pdo->prepare("CREATE TABLE Attempts(
-            Car_ID  INT PRIMARY KEY,
+            Car_ID  INT,
             Result INT
 );");
         $request->execute();

@@ -1,7 +1,13 @@
 <?php
-require_once ('Migration.php');
-class CarsMigration extends Migration {
-    public function run(){
+
+namespace Migrations;
+
+require_once('Migration.php');
+
+class CarsMigration extends Migration
+{
+    public function run()
+    {
         $request = $this->pdo->prepare("CREATE TABLE Cars(
             ID  INT PRIMARY KEY,
             Name varchar(255),
@@ -10,7 +16,9 @@ class CarsMigration extends Migration {
 );");
         $request->execute();
     }
-    public function cancel(){
+
+    public function cancel()
+    {
         $request = $this->pdo->prepare("DROP TABLE Cars");
         $request->execute();
     }

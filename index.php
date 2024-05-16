@@ -1,3 +1,11 @@
+<?php
+use Requests\GetTableData;
+require_once "DataBase/Requests/GetTableData.php";
+$TableDataRequest = new GetTableData();
+$TableDataRequest->run();
+var_dump($TableDataRequest);
+?>
+
 <html>
     <head>
         <title>Турнирная Таблица</title>

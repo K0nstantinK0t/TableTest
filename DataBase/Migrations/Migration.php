@@ -3,21 +3,10 @@
 namespace Migrations;
 use PDO;
 
-abstract class Migration
-{
-    protected PDO $pdo;
+require_once ('../DBRequest.php');
 
-    public function __construct()
-    {
-        $config = include '../../config.php';
-        $dsn = "mysql:host=" . $config['host'] . ";dbname=" . $config['db'] . ";charset=" . $config['charset'];
-        $opt = [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-        ];
-        $this->pdo = new PDO($dsn, $config['user'], $config['pass'], $opt);
-    }
+abstract class Migration extends \DBRequest
+{
 
     public abstract function run();
 

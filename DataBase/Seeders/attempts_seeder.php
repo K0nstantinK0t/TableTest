@@ -8,7 +8,7 @@ class AttemptsSeeder extends Seeder
 {
     public function run()
     {
-        $attemptsjson = file_get_contents('../../data_attempts.json');
+        $attemptsjson = file_get_contents(__DIR__ .'/../../data_attempts.json');
         $attempts = json_decode($attemptsjson, true);
         $request= $this->generateRequest($attempts);
         $request = $this->pdo->prepare($request);
@@ -17,9 +17,10 @@ class AttemptsSeeder extends Seeder
     protected function generateRequest($cars)
     {
 
-        $request = "INSERT INTO Attempts(Car_ID, Result) VALUES ";
-        foreach ($cars as $car){
-            $request = $request."(".$car['id'].
+        $request = "INSERT INTO Attempts(ID, Car_ID, Result) VALUES ";
+        foreach ($cars as $key=>$car){
+            $request = $request."(".$key.
+                ", ".$car['id'].
                 ", '".$car['result'];
             if($car == end($cars))
             {

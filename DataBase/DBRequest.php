@@ -5,7 +5,7 @@ abstract class DBRequest
 
     public function __construct()
     {
-        $config = include "../config.php";
+        $config = include __DIR__."/../config.php";
         $dsn = "mysql:host=" . $config['host'] . ";dbname=" . $config['db'] . ";charset=" . $config['charset'];
         $opt = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

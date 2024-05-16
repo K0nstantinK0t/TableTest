@@ -1,6 +1,6 @@
 <?php
 return [
-    'host' => '127.0.0.1',
+    'host' => 'MySQL-8.2',
     'db'   => 'TableTest',
     'user' => 'root',
     'pass' => '',

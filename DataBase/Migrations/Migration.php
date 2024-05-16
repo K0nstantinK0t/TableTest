@@ -3,7 +3,7 @@
 namespace Migrations;
 use PDO;
 
-require_once ('../DBRequest.php');
+require_once (__DIR__ .'/../DBRequest.php');
 
 abstract class Migration extends \DBRequest
 {

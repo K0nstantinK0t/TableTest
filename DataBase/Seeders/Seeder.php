@@ -4,7 +4,7 @@ namespace Seeders;
 
 use PDO;
 
-require_once '../DBRequest.php';
+require_once __DIR__ .'/../DBRequest.php';
 
 abstract class Seeder extends \DBRequest
 {

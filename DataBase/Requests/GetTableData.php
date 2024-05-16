@@ -6,7 +6,7 @@ class GetTableData extends DBRequest
 {
     public function run()
     {
-        $request = 'SELECT * FROM Cars INNER JOIN Attempts ON Cars.`id` = Attempts.Car_ID;';
+        $request = 'SELECT * FROM Cars INNER JOIN Attempts ON Cars.ID = Attempts.Car_ID ORDER BY Attempts.ID;';
         return $this->pdo->query($request);
     }
 }

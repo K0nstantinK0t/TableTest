@@ -10,30 +10,32 @@ $attempts = $TableDataRequest->run();
 <html lang="ru">
     <head>
         <title>Турнирная Таблица</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Турнирная таблица</h1>
-        <table>
-            <tr>
-                <th>
-                    Номер заезда
-                </th>
-                <th>
-                    ФИО
-                </th>
-                <th>
-                    Город
-                </th>
-                <th>
-                    Машина
-                </th>
-                <th>
-                    Результат заезда
-                </th>
-            </tr>
-            <?php
-            foreach($attempts as $key=>$attempt){
-                echo "
+        <h1 class="t-center">Турнирная таблица</h1>
+        <section class="mg-center">
+            <table class="t-center">
+                <tr>
+                    <th>
+                        Номер заезда
+                    </th>
+                    <th>
+                        ФИО
+                    </th>
+                    <th>
+                        Город
+                    </th>
+                    <th>
+                        Машина
+                    </th>
+                    <th>
+                        Результат заезда
+                    </th>
+                </tr>
+                <?php
+                foreach($attempts as $key=>$attempt){
+                    echo "
                     <tr>
                         <td>
                         ".($key+1)."
@@ -53,16 +55,16 @@ $attempts = $TableDataRequest->run();
                         
                     </tr>
                 ";
-            }
-            ?>
-        </table>
-
+                }
+                ?>
+            </table>
+        </section>
 <?php
 $WinnerDataRequest = new GetWinnersData();
 $winners = $WinnerDataRequest->run();
  ?>
 
-        <table>
+        <table class="t-center  mg-center mt-10">
             <tr>
                 <th>
                     ФИО
@@ -83,9 +85,6 @@ $winners = $WinnerDataRequest->run();
                         </td>
                         <td>
                         ".$winner['TotalResult']."
-                        </td>
-                        <td>
-                        ".$attempt['Car']."
                         </td>
                         <td>
                         ".($key+1)."

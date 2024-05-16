@@ -8,7 +8,7 @@ class CarsSeeder extends Seeder
 {
     public function run()
     {
-        $carsjson = file_get_contents('../../data_cars.json');
+        $carsjson = file_get_contents(__DIR__ .'/../../data_cars.json');
         $cars = json_decode($carsjson, true);
         $request= $this->generateRequest($cars);
         $request = $this->pdo->prepare($request);
